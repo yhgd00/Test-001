@@ -1,0 +1,83 @@
+:root {
+  color-scheme: dark;
+  --bg: #111;
+  --panel: #1b1b1b;
+  --tile: #252525;
+  --wall: #3f3f3f;
+  --floor: #161616;
+  --text: #e8e8e8;
+  --accent: #8be9fd;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background: radial-gradient(circle at top, #1f1f1f 0%, #111 60%);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+h1 { margin-top: 0; }
+.help { line-height: 1.5; color: #c9c9c9; }
+.item { color: #69ff90; }
+.stairs { color: #ffd166; }
+
+.stats {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 0.75rem;
+  background: var(--accent);
+  color: #111;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 1rem;
+  min-height: 3.8rem;
+  background: #121212;
+  border-radius: 8px;
+  padding: 0.6rem;
+  border: 1px solid #2d2d2d;
+  color: #c3f0ff;
+}
+
+.game-wrap {
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  border: 2px solid #393939;
+  border-radius: 12px;
+  image-rendering: pixelated;
+  max-width: 100%;
+  height: auto;
+  background: #101010;
+}
+
+@media (max-width: 960px) {
+  .app { grid-template-columns: 1fr; }
+}
